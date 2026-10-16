@@ -106,3 +106,6 @@ window.AVALON_DEFAULTS = {
     caption: "",
   })),
 };
+
+// O carrossel mostra só os banners feitos com IA (os dois primeiros).
+window.AVALON_DEFAULTS.banners = window.AVALON_DEFAULTS.banners.slice(0, 2);
