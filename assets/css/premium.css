@@ -296,6 +296,26 @@ section + section::before {
   .footer-grid { grid-template-columns: 1fr; }
 }
 
+/* Transição premium entre os slides: fade suave, zoom lento na foto e texto subindo */
+.hero-slide { transition: opacity 1s ease; }
+.hero-slide .hero-img {
+  transform: scale(1.12);
+  transition: transform 5s cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+.hero-slide.is-active .hero-img { transform: scale(1); }
+.hero-slide .hero-content {
+  opacity: 0;
+  transform: translate(-50%, 24px);
+  transition: opacity 0.9s ease 0.35s, transform 0.9s ease 0.35s;
+}
+.hero-slide.is-active .hero-content {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide, .hero-slide .hero-img, .hero-slide .hero-content { transition: none; }
+}
+
 /* Banners: o enquadramento vertical mantém os rostos visíveis em telas grandes */
 .hero-img { object-position: center 10%; }
 

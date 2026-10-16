@@ -188,7 +188,7 @@
       dotNodes.forEach((d, i) => d.classList.toggle("is-active", i === n));
     };
     dotNodes.forEach((d, i) => d.addEventListener("click", () => show(i)));
-    if (slideNodes.length > 1) setInterval(() => show((current + 1) % slideNodes.length), 6500);
+    if (slideNodes.length > 1) setInterval(() => show((current + 1) % slideNodes.length), 4200);
   }
 
   function renderPromos(list) {
