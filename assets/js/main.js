@@ -111,6 +111,12 @@
     const booking = $("#site-agendar-app");
     booking.href = site.agendar_url || "#";
     booking.hidden = !site.agendar_url;
+
+    // Botão Agendar do topo: agenda online (AppBarber)
+    const headerBooking = $("#header-agendar");
+    headerBooking.href = site.agendar_url || "#";
+    headerBooking.target = "_blank";
+    headerBooking.rel = "noopener";
   }
 
   function parseCoords(url) {
