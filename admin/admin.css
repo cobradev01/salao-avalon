@@ -34,6 +34,15 @@ input, textarea {
   border-radius: 10px;
   font: inherit;
 }
+/* Campos com Roboto e leitura confortável, também nos placeholders */
+input, textarea, select, button {
+  font-family: Roboto, system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+}
+input, textarea { font-size: 1rem; padding: 14px 16px; }
+input::placeholder, textarea::placeholder { color: #8a8a8a; font-weight: 300; letter-spacing: 0.03em; }
 input:focus, textarea:focus { outline: 2px solid var(--gold); border-color: transparent; }
 input[type="checkbox"] { width: auto; }
 input[type="file"] { color: var(--muted); padding: 8px 0; border: 0; background: none; }
