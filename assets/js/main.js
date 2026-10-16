@@ -213,17 +213,20 @@
     );
   }
 
-  function renderServices(list) {
+  // Cada serviço vira um botão que abre a agenda online (o AppBarber não tem link por serviço)
+  function renderServices(list, bookingUrl) {
     $("#servicos-grid").replaceChildren(
-      ...list.map((s) =>
-        el(
-          "article",
-          { class: "card service" },
+      ...list.map((s) => {
+        const body = [
           el("h3", {}, s.name),
           s.description ? el("p", {}, s.description) : null,
           el("div", { class: "price" }, s.price_label || "Consulte"),
-        ),
-      ),
+          bookingUrl ? el("span", { class: "service-cta" }, "Agendar este serviço") : null,
+        ];
+        return bookingUrl
+          ? el("a", { class: "card service card-link", href: bookingUrl, target: "_blank", rel: "noopener", "aria-label": `Agendar ${s.name}` }, ...body)
+          : el("article", { class: "card service" }, ...body);
+      }),
     );
   }
 
@@ -296,7 +299,7 @@
     renderSite(content.site);
     renderBanners(content.banners, content.site);
     renderPromos(content.promotions);
-    renderServices(content.services);
+    renderServices(content.services, content.site.agendar_url);
     renderTeam(content.team_members);
     $("#ano").textContent = new Date().getFullYear();
     setupUI();
