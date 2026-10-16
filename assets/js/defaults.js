@@ -19,15 +19,15 @@ window.AVALON_DEFAULTS = {
   },
   banners: [
     {
-      title: "Precisão em cada detalhe",
-      subtitle: "Cortes masculinos com acabamento de alto padrão",
+      title: "Seu estilo, em boas mãos",
+      subtitle: "Cortes masculinos com precisão, acabamento impecável e hora marcada",
       image_url: "assets/img/hero-01.jpg",
       button_label: "Agendar pelo WhatsApp",
       button_link: "",
     },
     {
-      title: "A barba feita como ela merece",
-      subtitle: "Navalha, toalha quente e acabamento impecável",
+      title: "A barba do jeito que você merece",
+      subtitle: "Navalha, toalha quente e acabamento feito com calma",
       image_url: "assets/img/hero-02.jpg",
       button_label: "Agendar pelo WhatsApp",
       button_link: "",
