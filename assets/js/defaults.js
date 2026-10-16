@@ -46,6 +46,20 @@ window.AVALON_DEFAULTS = {
       button_label: "Agendar pelo WhatsApp",
       button_link: "",
     },
+    {
+      title: "Cortes com estilo e precisão",
+      subtitle: "Desenhos, degradê e acabamento feitos com cuidado",
+      image_url: "assets/img/hero-05.jpg",
+      button_label: "Agendar pelo WhatsApp",
+      button_link: "",
+    },
+    {
+      title: "Uma recepção feita para você",
+      subtitle: "Atendimento acolhedor do início ao fim",
+      image_url: "assets/img/hero-06.jpg",
+      button_label: "Agendar pelo WhatsApp",
+      button_link: "",
+    },
   ],
   team_members: [
     { name: "Barbeiro Avalon", role: "Barbeiro especialista", photo_url: "assets/img/equipe-01.jpeg", instagram: "" },
