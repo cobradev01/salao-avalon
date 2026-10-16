@@ -90,7 +90,8 @@
     const coords = parseCoords(site.google_maps || "");
     $("#map-card").hidden = !coords;
     if (coords) {
-      const directions = `https://www.google.com/maps/dir/?api=1&destination=${coords.lat},${coords.lng}`;
+      // "Como chegar" abre direto a página da Avalon no Google Maps (link salvo no painel)
+      const directions = site.google_maps;
       $("#mapa").src = `https://www.google.com/maps?q=${coords.lat},${coords.lng}&z=17&hl=pt-BR&output=embed`;
       $("#site-rota").href = directions;
       $("#loc-rota-link").href = directions;
