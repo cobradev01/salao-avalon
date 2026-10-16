@@ -101,6 +101,11 @@
     }
 
     $("#footer-redes").replaceChildren(...socialLinks(site));
+
+    // Link de agendamento online (AppBarber)
+    const booking = $("#site-agendar-app");
+    booking.href = site.agendar_url || "#";
+    booking.hidden = !site.agendar_url;
   }
 
   function parseCoords(url) {

@@ -15,6 +15,7 @@ window.AVALON_DEFAULTS = {
     youtube: "",
     threads: "",
     x: "",
+    agendar_url: "https://sites.appbarber.com.br/avalonbarbearia062?source=google_reserve&rwg_token=AE37R_hjz8lu9meZjUenQki8LY1xwwvjBKA4nYam3UCeswxRbS4X-H5pRKOago74cRg5v3x0YvbBC5GntC32aB8l03nIX3VPRg%3D%3D",
   },
   banners: [
     {
