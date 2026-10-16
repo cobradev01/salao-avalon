@@ -41,7 +41,31 @@ input, textarea, select, button {
   letter-spacing: 0.02em;
   line-height: 1.5;
 }
-input, textarea { font-size: 1.125rem; padding: 14px 16px; }
+input, textarea { font-size: 1.25rem; font-weight: 500; color: #fff; padding: 14px 16px; }
+
+/* Senha com botão de mostrar/ocultar */
+.pwd-wrap { position: relative; display: block; }
+.pwd-wrap input { padding-right: 60px; }
+.pwd-toggle {
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--gold);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.pwd-toggle svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.pwd-toggle:hover,
+.pwd-toggle:focus-visible { background: #fff; color: #000; }
+.pwd-toggle.is-on { color: #fff; }
 label { font-size: 1.02rem; color: #c9c9c9; }
 .btn { font-size: 0.95rem; }
 .btn-sm { font-size: 0.85rem; }

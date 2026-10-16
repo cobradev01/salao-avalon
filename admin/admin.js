@@ -112,6 +112,16 @@
 
   $("#logout").addEventListener("click", () => client.auth.signOut());
 
+  // Mostrar ou ocultar a senha
+  $("#toggle-senha").addEventListener("click", (e) => {
+    const input = $("#senha");
+    const show = input.type === "password";
+    input.type = show ? "text" : "password";
+    e.currentTarget.setAttribute("aria-pressed", String(show));
+    e.currentTarget.setAttribute("aria-label", show ? "Ocultar senha" : "Mostrar senha");
+    e.currentTarget.classList.toggle("is-on", show);
+  });
+
   client.auth.onAuthStateChange((_event, session) => {
     showEl("#login", !session);
     showEl("#panel", Boolean(session));

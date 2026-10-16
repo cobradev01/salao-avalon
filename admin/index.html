@@ -25,7 +25,12 @@
         <input type="email" name="email" required autocomplete="username">
       </label>
       <label>Senha
-        <input type="password" name="password" required autocomplete="current-password">
+        <span class="pwd-wrap">
+          <input type="password" name="password" id="senha" required autocomplete="current-password">
+          <button type="button" class="pwd-toggle" id="toggle-senha" aria-label="Mostrar senha" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg>
+          </button>
+        </span>
       </label>
       <button class="btn" type="submit">Entrar</button>
       <p id="login-erro" class="erro" role="alert"></p>
