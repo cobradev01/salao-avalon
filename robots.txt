@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /admin/
 
-Sitemap: https://SEU-DOMINIO.com.br/sitemap.xml
+Sitemap: https://www.avalonbarbearia.com.br/sitemap.xml
