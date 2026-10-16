@@ -87,7 +87,10 @@
     $("#loc-horario").textContent = site.horario || "Consulte pelo WhatsApp.";
 
     // Mapa: usa as coordenadas do link do Google Maps do negócio
-    const coords = parseCoords(site.google_maps || "");
+    // Latitude/longitude digitadas no painel têm prioridade; senão, usa o link do Google Maps
+    const typed = { lat: String(site.latitude || "").trim(), lng: String(site.longitude || "").trim() };
+    const typedOk = typed.lat && typed.lng && !isNaN(Number(typed.lat)) && !isNaN(Number(typed.lng));
+    const coords = typedOk ? typed : parseCoords(site.google_maps || "");
     $("#map-card").hidden = !coords;
     if (coords) {
       // "Como chegar" abre direto a página da Avalon no Google Maps (link salvo no painel)

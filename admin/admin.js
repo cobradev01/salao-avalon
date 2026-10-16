@@ -69,6 +69,8 @@
     { key: "endereco", label: "Endereço", type: "textarea" },
     { key: "horario", label: "Horário de funcionamento" },
     { key: "google_maps", label: "Link do Google Maps" },
+    { key: "latitude", label: "Latitude (opcional, ex.: -16.6979373)" },
+    { key: "longitude", label: "Longitude (opcional, ex.: -49.3012767)" },
     { key: "instagram", label: "Instagram (link)" },
     { key: "facebook", label: "Facebook (link)" },
     { key: "tiktok", label: "TikTok (link)" },
