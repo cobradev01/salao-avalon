@@ -218,7 +218,15 @@
         el(
           "figure",
           { class: "gallery-item reveal" },
-          el("img", { src: g.image_url, alt: g.caption || "Foto da Avalon Barbearia", loading: "lazy" }),
+          el("img", {
+            src: g.image_url,
+            alt: g.caption || "Foto da Avalon Barbearia",
+            loading: "lazy",
+            // fotos mais largas que altas ocupam duas colunas, sem cortar
+            onload: (e) => {
+              if (e.target.naturalWidth > e.target.naturalHeight * 1.2) e.target.closest("figure").classList.add("is-wide");
+            },
+          }),
           g.caption ? el("figcaption", {}, g.caption) : null,
         ),
       ),
