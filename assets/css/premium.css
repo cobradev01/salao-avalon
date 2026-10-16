@@ -312,6 +312,126 @@ p { font-weight: 400; line-height: 1.7; }
 .tag { font-weight: 500; }
 .credit a { font-weight: 500; }
 
+/* Localização: mapa grande + cartões, no padrão dos sites GLC */
+.section-head--center { align-items: center; text-align: center; }
+.section-head--center p { margin-inline: auto; }
+.section-head--center::before { margin-inline: auto; }
+
+.loc-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 28px;
+  align-items: stretch;
+}
+.map-card {
+  position: relative;
+  min-height: 520px;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--bg-3);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), var(--gold-glow);
+}
+/* Esconde a ficha do local que o Google desenha no topo do mapa (mesmo recorte usado na amaalimentos) */
+.map-card iframe {
+  position: absolute;
+  left: 0;
+  top: -150px;
+  width: 100%;
+  height: calc(100% + 150px);
+  border: 0;
+  filter: grayscale(0.25) contrast(1.05) brightness(0.92);
+}
+.map-pill {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  background: var(--gold);
+  color: #000;
+  font-weight: 500;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.map-pill::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  background: currentColor;
+  clip-path: polygon(50% 0, 100% 100%, 50% 75%, 0 100%);
+}
+.map-pill:hover,
+.map-pill:focus-visible { background: #fff; color: #000; }
+
+.loc-cards { display: flex; flex-direction: column; gap: 16px; }
+.info-card {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  flex: 1;
+  padding: 24px 26px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: linear-gradient(180deg, var(--bg-3), var(--bg-2));
+  transition: border-color 0.35s ease, transform 0.35s ease;
+}
+.info-card:hover { border-color: #fff; transform: translateY(-3px); }
+.info-icon {
+  flex: none;
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--gold);
+  background: #000;
+  box-shadow: 0 0 0 1px var(--gold), 0 0 0 6px rgba(245, 196, 0, 0.12);
+}
+.info-icon svg { width: 26px; height: 26px; }
+.info-body { min-width: 0; flex: 1; }
+.info-body h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 6px; }
+.info-body p { color: var(--muted); margin: 0; font-size: 1rem; line-height: 1.6; }
+.info-action {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 14px;
+  padding: 9px 18px;
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+.info-action:hover,
+.info-action:focus-visible { background: #fff; border-color: #fff; color: #000; }
+
+@media (max-width: 900px) {
+  .loc-grid { grid-template-columns: 1fr; }
+  .map-card { min-height: 380px; }
+}
+
+/* Rodapé com três colunas: marca, links e redes */
+.footer-grid { grid-template-columns: 1.2fr 1fr 1fr; }
+@media (max-width: 900px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
+  .footer-grid { grid-template-columns: 1fr; }
+}
+
 /* Botão do WhatsApp: pílula verde fixa, com anel pulsante */
 .wa-float {
   display: inline-flex;

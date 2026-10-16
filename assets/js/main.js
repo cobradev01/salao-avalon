@@ -81,36 +81,19 @@
       a.rel = "noopener";
     });
 
-    const setInfo = (sel, value) => {
-      const node = $(sel);
-      if (!node) return;
-      node.textContent = value || "";
-      (node.closest(".info-row") || node).hidden = !value;
-    };
-    setInfo("#site-telefone", site.whatsapp_exibir);
-    setInfo("#site-endereco", site.endereco);
-    setInfo("#site-horario", site.horario);
+    // Localização: cartões de endereço, WhatsApp e horário, com texto de apoio quando vazio
+    $("#loc-endereco").textContent = site.endereco || "Consulte o endereço no mapa ao lado.";
+    $("#loc-telefone").textContent = site.whatsapp_exibir || "";
+    $("#loc-horario").textContent = site.horario || "Consulte pelo WhatsApp.";
 
-    setInfo("#footer-telefone", site.whatsapp_exibir);
-    setInfo("#footer-endereco", site.endereco);
-    setInfo("#footer-horario", site.horario);
-
-    const maps = $("#site-maps");
-    if (maps) {
-      maps.href = site.google_maps || "#";
-      maps.hidden = !site.google_maps;
-    }
-
-    // Mapa e "Como chegar": usa as coordenadas do link do Google Maps do negócio
+    // Mapa: usa as coordenadas do link do Google Maps do negócio
     const coords = parseCoords(site.google_maps || "");
-    $("#como-chegar").hidden = !coords;
+    $("#map-card").hidden = !coords;
     if (coords) {
+      const directions = `https://www.google.com/maps/dir/?api=1&destination=${coords.lat},${coords.lng}`;
       $("#mapa").src = `https://www.google.com/maps?q=${coords.lat},${coords.lng}&z=17&hl=pt-BR&output=embed`;
-      $("#site-rota").href = `https://www.google.com/maps/dir/?api=1&destination=${coords.lat},${coords.lng}`;
-      $("#site-maps-link").href = site.google_maps;
-      const endereco = $("#site-endereco-mapa");
-      endereco.textContent = site.endereco || "";
-      endereco.hidden = !site.endereco;
+      $("#site-rota").href = directions;
+      $("#loc-rota-link").href = directions;
     }
 
     $("#footer-redes").replaceChildren(...socialLinks(site));
