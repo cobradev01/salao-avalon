@@ -101,4 +101,8 @@ window.AVALON_DEFAULTS = {
     { name: "Corte + barba", description: "O combo completo para renovar o visual de ponta a ponta.", price_label: "Consulte" },
   ],
   promotions: [],
+  gallery: Array.from({ length: 12 }, (_, i) => ({
+    image_url: `assets/galeria/galeria-${String(i + 1).padStart(2, "0")}.jpg`,
+    caption: "",
+  })),
 };

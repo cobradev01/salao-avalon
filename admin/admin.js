@@ -61,6 +61,18 @@
     },
   };
 
+  TABLES.gallery = {
+    label: "Galeria",
+    title: "foto",
+    preview: ["caption", "position"],
+    fields: [
+      { key: "image_url", label: "Foto (use fotos na vertical ou horizontal, de boa qualidade)", type: "image", required: true },
+      { key: "caption", label: "Legenda (opcional)" },
+      { key: "position", label: "Ordem", type: "number" },
+      { key: "active", label: "Visível no site", type: "bool" },
+    ],
+  };
+
   const SITE_FIELDS = [
     { key: "nome", label: "Nome da barbearia" },
     { key: "whatsapp", label: "WhatsApp só com números, com DDI e DDD (ex.: 5562993067066)" },

@@ -53,12 +53,13 @@
     try {
       const client = window.supabase.createClient(cfg.supabaseUrl, cfg.supabaseAnonKey);
       const ordered = (table) => client.from(table).select("*").eq("active", true).order("position", { ascending: true });
-      const [site, banners, team, services, promos] = await Promise.all([
+      const [site, banners, team, services, promos, gallery] = await Promise.all([
         client.from("site_settings").select("value").eq("key", "site").maybeSingle(),
         ordered("banners"),
         ordered("team_members"),
         ordered("services"),
         ordered("promotions"),
+        ordered("gallery"),
       ]);
       const pick = (res, fallback) => (res.error ? fallback : res.data);
       return {
@@ -67,6 +68,7 @@
         team_members: pick(team, defaults.team_members),
         services: pick(services, defaults.services),
         promotions: pick(promos, defaults.promotions),
+        gallery: pick(gallery, defaults.gallery),
       };
     } catch (err) {
       console.warn("Avalon: usando o conteúdo padrão.", err);
@@ -133,8 +135,8 @@
 
   // Ponto de foco de cada foto do carrossel (onde está o rosto), para não cortar no celular
   const HERO_FOCUS = {
-    "hero-01.jpg": "50% 20%",
-    "hero-02.jpg": "40% 30%",
+    "hero-01.jpg": "70% 25%",
+    "hero-02.jpg": "70% 30%",
     "hero-03.jpg": "50% 25%",
     "hero-04.jpg": "50% 30%",
     "hero-05.jpg": "60% 30%",
@@ -205,6 +207,22 @@
     };
     dotNodes.forEach((d, i) => d.addEventListener("click", () => show(i)));
     if (slideNodes.length > 1) setInterval(() => show((current + 1) % slideNodes.length), 4200);
+  }
+
+  // Galeria de fotos da barbearia (o painel adiciona e remove fotos)
+  function renderGallery(list) {
+    const section = $("#galeria");
+    section.hidden = list.length === 0;
+    $("#galeria-grid").replaceChildren(
+      ...list.map((g) =>
+        el(
+          "figure",
+          { class: "gallery-item reveal" },
+          el("img", { src: g.image_url, alt: g.caption || "Foto da Avalon Barbearia", loading: "lazy" }),
+          g.caption ? el("figcaption", {}, g.caption) : null,
+        ),
+      ),
+    );
   }
 
   function renderPromos(list) {
@@ -315,6 +333,7 @@
     renderSite(content.site);
     renderBanners(content.banners, content.site);
     renderPromos(content.promotions);
+    renderGallery(content.gallery);
     renderServices(content.services, content.site.agendar_url);
     renderTeam(content.team_members);
     $("#ano").textContent = new Date().getFullYear();

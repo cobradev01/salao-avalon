@@ -139,3 +139,22 @@ from (values
   ('Corte + barba', 'O combo completo para renovar o visual de ponta a ponta.', 'Consulte', 4)
 ) as v(name, description, price_label, position)
 where not exists (select 1 from public.services);
+
+-- ===== Galeria de fotos (o painel adiciona e remove fotos) =====
+
+create table if not exists public.gallery (
+  id uuid primary key default gen_random_uuid(),
+  image_url text not null,
+  caption text,
+  position int not null default 0,
+  active boolean not null default true,
+  created_at timestamptz not null default now()
+);
+
+alter table public.gallery enable row level security;
+
+drop policy if exists "leitura publica" on public.gallery;
+create policy "leitura publica" on public.gallery for select using (true);
+
+drop policy if exists "admin escreve" on public.gallery;
+create policy "admin escreve" on public.gallery for all to authenticated using (true) with check (true);
