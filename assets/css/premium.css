@@ -167,7 +167,24 @@ section + section::before {
 
 /* Contato */
 .info-row span { font-size: 1.05rem; color: var(--text); }
-.socials .social { backdrop-filter: blur(4px); }
+/* Redes sociais: símbolo + nome, amarelo no normal e branco no hover */
+.socials { gap: 14px; }
+.social {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 22px 11px 14px;
+  backdrop-filter: blur(4px);
+}
+.social svg {
+  width: 20px;
+  height: 20px;
+  flex: none;
+  fill: currentColor;
+  transition: transform 0.3s ease;
+}
+.social:hover svg,
+.social:focus-visible svg { transform: scale(1.12); }
 
 /* Rodapé */
 .footer {
