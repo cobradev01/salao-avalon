@@ -358,6 +358,23 @@ p { font-weight: 400; line-height: 1.7; }
 .card-link:hover .service-cta,
 .card-link:focus-visible .service-cta { color: #000; }
 
+/* Foto do estacionamento, abaixo dos cartões da localização */
+.loc-photo {
+  margin: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+}
+.loc-photo img { display: block; width: 100%; height: auto; }
+.loc-photo figcaption {
+  padding: 12px 18px;
+  background: var(--bg-3);
+  color: var(--muted);
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+
 /* Botão de agendamento abaixo da lista de serviços */
 .section-cta { margin-top: 44px; display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; }
 .section-cta p { margin: 0; }
