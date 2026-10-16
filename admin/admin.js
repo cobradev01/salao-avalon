@@ -26,7 +26,7 @@
       preview: ["name", "role"],
       fields: [
         { key: "name", label: "Nome", required: true },
-        { key: "role", label: "Função" },
+        { key: "role", label: "Especialização (ex.: Degradê, barba e navalha)" },
         { key: "photo_url", label: "Foto (retrato, vertical)", type: "image" },
         { key: "instagram", label: "Instagram (@usuario ou link)" },
         { key: "position", label: "Ordem", type: "number" },
