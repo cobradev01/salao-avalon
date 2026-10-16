@@ -113,9 +113,7 @@
       endereco.hidden = !site.endereco;
     }
 
-    const links = socialLinks(site);
-    $("#redes").replaceChildren(...links.map((a) => a.cloneNode(true)));
-    $("#footer-redes").replaceChildren(...links);
+    $("#footer-redes").replaceChildren(...socialLinks(site));
   }
 
   function parseCoords(url) {
