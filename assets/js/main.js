@@ -11,7 +11,8 @@
     const node = document.createElement(tag);
     for (const [key, value] of Object.entries(attrs)) {
       if (value === undefined || value === null || value === false || value === "") continue;
-      node.setAttribute(key, value === true ? "" : value);
+      if (key.startsWith("on") && typeof value === "function") node.addEventListener(key.slice(2), value);
+      else node.setAttribute(key, value === true ? "" : value);
     }
     node.append(...children.filter((c) => c !== undefined && c !== null && c !== false));
     return node;
@@ -209,6 +210,28 @@
     if (slideNodes.length > 1) setInterval(() => show((current + 1) % slideNodes.length), 4200);
   }
 
+  // Foto ampliada ao clicar (fecha com o botão, com Esc ou clicando fora)
+  function openLightbox(src, alt) {
+    const box = el(
+      "div",
+      { class: "lightbox", role: "dialog", "aria-modal": "true", "aria-label": alt || "Foto ampliada" },
+      el("img", { src, alt: alt || "" }),
+      el("button", { class: "lightbox-close", type: "button", "aria-label": "Fechar", onclick: close }, "×"),
+    );
+    function close() {
+      box.remove();
+      document.removeEventListener("keydown", onKey);
+    }
+    function onKey(e) {
+      if (e.key === "Escape") close();
+    }
+    box.addEventListener("click", (e) => {
+      if (e.target === box) close();
+    });
+    document.addEventListener("keydown", onKey);
+    document.body.append(box);
+  }
+
   // Galeria de fotos da barbearia (o painel adiciona e remove fotos)
   function renderGallery(list) {
     const section = $("#galeria");
@@ -217,7 +240,7 @@
       ...list.map((g) =>
         el(
           "figure",
-          { class: "gallery-item reveal" },
+          { class: "gallery-item reveal", onclick: () => openLightbox(g.image_url, g.caption) },
           el("img", {
             src: g.image_url,
             alt: g.caption || "Foto da Avalon Barbearia",
