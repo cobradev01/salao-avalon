@@ -202,18 +202,48 @@ section + section::before {
 }
 
 /* WhatsApp flutuante com halo */
-.wa-float { box-shadow: 0 14px 34px rgba(245, 196, 0, 0.45); }
+/* Botão do WhatsApp: pílula verde fixa, com anel pulsante */
+.wa-float {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 58px;
+  width: auto;
+  padding: 0 24px 0 16px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: linear-gradient(135deg, #2fe27a 0%, #25d366 50%, #128c4a 100%);
+  color: #fff;
+  box-shadow: 0 14px 34px rgba(37, 211, 102, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  font: 700 0.85rem/1 Roboto, sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.wa-float svg { width: 26px; height: 26px; flex: none; }
+.wa-float:hover,
+.wa-float:focus-visible {
+  background: #fff;
+  color: #128c4a;
+  box-shadow: 0 14px 40px rgba(255, 255, 255, 0.3);
+}
 .wa-float::after {
   content: "";
   position: absolute;
   inset: -6px;
-  border-radius: 50%;
-  border: 1px solid rgba(245, 196, 0, 0.5);
-  animation: halo 2.4s ease-out infinite;
+  border-radius: 999px;
+  border: 2px solid rgba(37, 211, 102, 0.6);
+  animation: halo 2s ease-out infinite;
+  pointer-events: none;
 }
 @keyframes halo {
-  from { transform: scale(0.9); opacity: 0.9; }
-  to { transform: scale(1.35); opacity: 0; }
+  from { transform: scale(0.96); opacity: 0.9; }
+  to { transform: scale(1.22); opacity: 0; }
+}
+@media (max-width: 560px) {
+  .wa-float { width: 58px; height: 58px; padding: 0; justify-content: center; }
+  .wa-float-text { display: none; }
+  .wa-float::after { border-radius: 50%; }
 }
 
 /* Slides: em telas estreitas o recorte precisa acompanhar o barbeiro (à direita da foto), não o braço */
