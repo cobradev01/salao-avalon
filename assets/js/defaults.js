@@ -8,11 +8,13 @@ window.AVALON_DEFAULTS = {
     mensagem: "Olá! Quero agendar um horário na Avalon Barbearia.",
     endereco: "",
     horario: "",
-    google_maps: "",
+    google_maps: "https://www.google.com/maps/place/Avalon+barbearia/@-16.6979396,-49.3012702,1158m/data=!3m1!1e3!4m6!3m5!1s0x935ef35249937e67:0x65ce57a93319db64!8m2!3d-16.6979373!4d-49.3012767!16s%2Fg%2F11mdvmsxn2?hl=pt-BR&entry=ttu",
     instagram: "https://instagram.com/avalonbarbearia062",
     facebook: "",
     tiktok: "",
     youtube: "",
+    threads: "",
+    x: "",
   },
   banners: [
     {

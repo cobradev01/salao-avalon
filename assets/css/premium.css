@@ -205,6 +205,55 @@ section + section::before {
 }
 
 /* WhatsApp flutuante com halo */
+/* Como chegar: mapa em moldura dourada */
+.map-frame {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  overflow: hidden;
+  background: var(--bg-3);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), var(--gold-glow);
+}
+.map-frame iframe {
+  display: block;
+  width: 100%;
+  height: clamp(320px, 45vw, 460px);
+  border: 0;
+  filter: grayscale(0.25) contrast(1.05) brightness(0.92);
+}
+.map-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+
+/* Rodapé: marca, contato, redes e crédito */
+.footer { text-align: left; padding: 64px 0 28px; }
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 36px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.footer-brand { display: grid; gap: 10px; justify-items: start; }
+.footer-brand img { width: 56px; height: 56px; border-radius: 50%; border: 1.5px solid var(--gold); object-fit: cover; }
+.footer-brand strong { font-weight: 900; letter-spacing: 0.14em; color: var(--text); }
+.footer-title {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  margin: 0 0 14px;
+}
+.footer-grid p { margin: 0 0 8px; }
+.footer-grid .socials { margin-top: 0; }
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 24px;
+  font-size: 0.82rem;
+}
+.footer-bottom p { margin: 0; }
+.credit { color: var(--gold); }
+
 /* Botão do WhatsApp: pílula verde fixa, com anel pulsante */
 .wa-float {
   display: inline-flex;
@@ -268,6 +317,11 @@ section + section::before {
   .trust-grid > div { padding: 20px 14px; }
   .trust-grid span { font-size: 0.85rem; }
   .hero-content h1::after { width: 64px; }
+}
+
+@media (max-width: 900px) {
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { justify-content: center; text-align: center; }
 }
 
 @media (prefers-reduced-motion: reduce) {

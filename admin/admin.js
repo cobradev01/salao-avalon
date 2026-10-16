@@ -73,6 +73,8 @@
     { key: "facebook", label: "Facebook (link)" },
     { key: "tiktok", label: "TikTok (link)" },
     { key: "youtube", label: "YouTube (link)" },
+    { key: "threads", label: "Threads (link)" },
+    { key: "x", label: "X (link)" },
   ];
 
   function el(tag, attrs = {}, ...children) {

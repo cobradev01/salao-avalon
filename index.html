@@ -140,11 +140,45 @@
         </div>
       </div>
     </section>
+    <section id="como-chegar" class="alt" hidden>
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Localização</span>
+          <h2>Como chegar</h2>
+          <p id="site-endereco-mapa"></p>
+        </div>
+        <div class="map-frame reveal">
+          <iframe id="mapa" title="Mapa da Avalon Barbearia no Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="map-actions reveal">
+          <a class="btn" id="site-rota" href="#" target="_blank" rel="noopener">Como chegar</a>
+          <a class="btn btn-outline" id="site-maps-link" href="#" target="_blank" rel="noopener">Abrir no Google Maps</a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
-    <div class="container">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/img/logo-avalon.jpeg" alt="Logo Avalon Barbearia" width="56" height="56" loading="lazy">
+        <strong>AVALON BARBEARIA</strong>
+        <p class="muted">Estilo, cuidado e confiança.</p>
+      </div>
+      <div>
+        <h3 class="footer-title">Contato</h3>
+        <p id="footer-telefone" class="muted"></p>
+        <p id="footer-endereco" class="muted"></p>
+        <p id="footer-horario" class="muted"></p>
+      </div>
+      <div>
+        <h3 class="footer-title">Redes sociais</h3>
+        <div class="socials" id="footer-redes"></div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
       <p>&copy; <span id="ano"></span> Avalon Barbearia. Todos os direitos reservados.</p>
+      <p class="credit">Criado por GLC Tecnologia</p>
     </div>
   </footer>
 
