@@ -216,6 +216,14 @@ section + section::before {
   to { transform: scale(1.35); opacity: 0; }
 }
 
+/* Slides: em telas estreitas o recorte precisa acompanhar o barbeiro (à direita da foto), não o braço */
+@media (max-width: 900px) {
+  .hero-img { object-position: 82% 25%; }
+}
+@media (max-width: 560px) {
+  .hero-img { object-position: 86% 22%; }
+}
+
 @media (max-width: 900px) {
   .trust-grid { grid-template-columns: repeat(2, 1fr); }
   .trust-grid > div:nth-child(3) { border-left: 0; }
