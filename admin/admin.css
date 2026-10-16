@@ -41,7 +41,17 @@ input, textarea, select, button {
   letter-spacing: 0.02em;
   line-height: 1.5;
 }
-input, textarea { font-size: 1rem; padding: 14px 16px; }
+input, textarea { font-size: 1.125rem; padding: 14px 16px; }
+label { font-size: 1.02rem; color: #c9c9c9; }
+.btn { font-size: 0.95rem; }
+.btn-sm { font-size: 0.85rem; }
+.muted { font-size: 1rem; }
+.tab { font-size: 1rem; }
+.row strong { font-size: 1.1rem; }
+.row .muted, .row small { font-size: 0.95rem; }
+h1 { font-size: 1.75rem; }
+h2 { font-size: 1.5rem; }
+.toolbar h2 { font-size: 1.6rem; }
 input::placeholder, textarea::placeholder { color: #8a8a8a; font-weight: 300; letter-spacing: 0.03em; }
 input:focus, textarea:focus { outline: 2px solid var(--gold); border-color: transparent; }
 input[type="checkbox"] { width: auto; }
