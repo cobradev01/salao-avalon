@@ -77,6 +77,9 @@
     { key: "x", label: "X (link)" },
   ];
 
+  // Caminhos do site (assets/...) são relativos à raiz; o painel fica em /admin/, então sobe um nível
+  const mediaUrl = (src) => (src && !/^https?:|^data:/.test(src) ? `../${src}` : src);
+
   function el(tag, attrs = {}, ...children) {
     const node = document.createElement(tag);
     for (const [key, value] of Object.entries(attrs)) {
@@ -191,7 +194,7 @@
     return el(
       "article",
       { class: row.active === false ? "row is-off" : "row" },
-      thumb ? el("img", { class: "thumb", src: thumb, alt: "" }) : el("div", { class: "thumb" }),
+      thumb ? el("img", { class: "thumb", src: mediaUrl(thumb), alt: "" }) : el("div", { class: "thumb" }),
       el(
         "div",
         { class: "row-info" },
@@ -266,7 +269,7 @@
       const hidden = el("input", { type: "hidden", name: f.key });
       hidden.value = value || "";
       const preview = el("img", { class: "preview", alt: "" });
-      if (value) preview.src = value;
+      if (value) preview.src = mediaUrl(value);
       else preview.hidden = true;
 
       const file = el("input", { type: "file", accept: "image/*" });

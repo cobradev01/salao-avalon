@@ -67,15 +67,19 @@ input, textarea { font-size: 1.25rem; font-weight: 500; color: #fff; padding: 14
 .pwd-toggle:focus-visible { background: #fff; color: #000; }
 .pwd-toggle.is-on { color: #fff; }
 label { font-size: 1.02rem; color: #c9c9c9; }
-.btn { font-size: 0.95rem; }
-.btn-sm { font-size: 0.85rem; }
-.muted { font-size: 1rem; }
-.tab { font-size: 1rem; }
-.row strong { font-size: 1.1rem; }
-.row .muted, .row small { font-size: 0.95rem; }
-h1 { font-size: 1.75rem; }
-h2 { font-size: 1.5rem; }
-.toolbar h2 { font-size: 1.6rem; }
+.btn { font-size: 1rem; letter-spacing: 0.06em; }
+.btn-sm { font-size: 0.92rem; }
+.muted { font-size: 1.05rem; line-height: 1.6; }
+.tab { font-size: 1.08rem; padding: 12px 20px; }
+.row strong { font-size: 1.3rem; font-weight: 500; letter-spacing: 0.01em; }
+.row .muted, .row small { font-size: 1.05rem; }
+.row small { font-size: 0.98rem; }
+h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; }
+h2 { font-size: 1.8rem; font-weight: 700; letter-spacing: -0.02em; }
+.toolbar h2 { font-size: 2rem; }
+.topbar strong { font-size: 1.15rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; }
+.erro { font-size: 1.05rem; }
+.form-page p.muted { font-size: 1rem; }
 input::placeholder, textarea::placeholder { color: #8a8a8a; font-weight: 300; letter-spacing: 0.03em; }
 input:focus, textarea:focus { outline: 2px solid var(--gold); border-color: transparent; }
 input[type="checkbox"] { width: auto; }

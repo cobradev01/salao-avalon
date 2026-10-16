@@ -54,6 +54,15 @@ Nunca usar branco puro como fundo de seção. O branco aparece só como estado d
 - Em telas de até 900px, o `object-position` do hero fica deslocado para a direita (`82% 25%`) para mostrar o barbeiro, não o braço.
 - Fotos novas: converter para JPEG com qualidade 85 antes de colocar no repositório.
 
+## Painel administrativo (`admin/`)
+
+- Mesma paleta, mesma fonte Roboto e mesmos botões amarelo→branco do site.
+- Campos de texto: 20px (`1.25rem`), peso 500, cor branca. Placeholder em peso 300 e cinza `#8a8a8a`.
+- Rótulos: 16–17px, cor `#c9c9c9`. Botões: 16px, letras maiúsculas com espaçamento.
+- Títulos das telas: `h2` 28–32px, peso 700. Nomes nas listas: 20–21px, peso 500.
+- Campo de senha sempre com botão de mostrar/ocultar (olho dourado, branco no hover).
+- Caminhos de imagem do site (`assets/...`) são relativos à raiz. No painel, use `mediaUrl()` para subir um nível.
+
 ## Mapa
 
 - A seção "Como chegar" usa iframe do Google Maps com `output=embed`, montado a partir das coordenadas do link salvo em `google_maps` (padrões `!3d…!4d…` ou `@lat,lng`).
