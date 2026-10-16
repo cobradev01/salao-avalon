@@ -296,6 +296,9 @@ section + section::before {
   .footer-grid { grid-template-columns: 1fr; }
 }
 
+/* Banners: o enquadramento vertical mantém os rostos visíveis em telas grandes */
+.hero-img { object-position: center 10%; }
+
 /* Tipografia: Roboto com pesos mais leves e espaçamento arejado */
 body { font-weight: 400; letter-spacing: 0.005em; }
 h1, h2 { font-weight: 700; letter-spacing: -0.02em; line-height: 1.12; }

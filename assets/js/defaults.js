@@ -39,6 +39,13 @@ window.AVALON_DEFAULTS = {
       button_label: "Agendar pelo WhatsApp",
       button_link: "",
     },
+    {
+      title: "Ambiente exclusivo para o seu visual",
+      subtitle: "Cadeiras confortáveis e atendimento com hora marcada",
+      image_url: "assets/img/hero-04.jpg",
+      button_label: "Agendar pelo WhatsApp",
+      button_link: "",
+    },
   ],
   team_members: [
     { name: "Barbeiro Avalon", role: "Barbeiro especialista", photo_url: "assets/img/equipe-01.jpeg", instagram: "" },
