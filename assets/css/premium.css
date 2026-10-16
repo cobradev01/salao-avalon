@@ -396,6 +396,37 @@ p { font-weight: 400; line-height: 1.7; }
 .card-link:hover .service-cta,
 .card-link:focus-visible .service-cta { color: #000; }
 
+/* Promoções: cards compactos com selo vermelho em forma de carimbo */
+#promos-grid { grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 18px; }
+.card.promo .promo-media {
+  position: relative;
+  height: 170px;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card.promo .promo-media img { width: 100%; height: 100%; object-fit: contain; }
+.promo-stamp {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 6px 12px;
+  border: 2px dashed #fff;
+  border-radius: 999px;
+  background: #dc2626;
+  color: #fff;
+  font-weight: 900;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: 0 8px 20px rgba(220, 38, 38, 0.45);
+  transform: rotate(-6deg);
+}
+.card.promo .card-body { padding: 16px 18px; }
+.card.promo h3 { font-size: 1.05rem; margin-bottom: 4px; }
+.card.promo p { font-size: 0.9rem; margin-bottom: 6px; }
+
 /* Galeria de fotos */
 .gallery-grid {
   display: grid;

@@ -264,7 +264,12 @@
         el(
           "article",
           { class: "card promo" },
-          p.image_url ? el("img", { src: p.image_url, alt: p.title, loading: "lazy" }) : null,
+          el(
+            "div",
+            { class: "promo-media" },
+            p.image_url ? el("img", { src: p.image_url, alt: p.title, loading: "lazy" }) : null,
+            el("span", { class: "promo-stamp" }, "Promoção"),
+          ),
           el(
             "div",
             { class: "card-body" },
