@@ -131,6 +131,21 @@
       );
   }
 
+  // Ponto de foco de cada foto do carrossel (onde está o rosto), para não cortar no celular
+  const HERO_FOCUS = {
+    "hero-01.jpg": "50% 20%",
+    "hero-02.jpg": "40% 30%",
+    "hero-03.jpg": "50% 25%",
+    "hero-04.jpg": "50% 30%",
+    "hero-05.jpg": "60% 30%",
+    "hero-06.jpg": "55% 30%",
+    "hero-07.jpg": "45% 25%",
+    "hero-08.jpg": "40% 30%",
+    "hero-09.jpg": "50% 30%",
+    "hero-10.jpg": "35% 30%",
+  };
+  const heroFocus = (src) => HERO_FOCUS[String(src || "").split("/").pop()] || "50% 30%";
+
   function renderBanners(list, site) {
     const wrap = $("#banners");
     const dots = $("#hero-dots");
@@ -146,6 +161,7 @@
             class: "hero-img",
             src: b.image_url,
             alt: b.title || "Avalon Barbearia",
+            style: `object-position: ${heroFocus(b.image_url)}`,
             fetchpriority: i === 0 ? "high" : "low",
           }),
           el(
