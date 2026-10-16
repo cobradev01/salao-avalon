@@ -113,7 +113,11 @@
     if (error) $("#login-erro").textContent = "E-mail ou senha inválidos.";
   });
 
-  $("#logout").addEventListener("click", () => client.auth.signOut());
+  // Sair encerra a sessão e volta para o site
+  $("#logout").addEventListener("click", async () => {
+    await client.auth.signOut();
+    window.location.href = "../";
+  });
 
   // Mostrar ou ocultar a senha
   $("#toggle-senha").addEventListener("click", (e) => {
