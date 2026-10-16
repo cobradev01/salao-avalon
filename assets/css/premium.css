@@ -167,18 +167,21 @@ section + section::before {
 
 /* Contato */
 .info-row span { font-size: 1.05rem; color: var(--text); }
-/* Redes sociais: símbolo + nome, amarelo no normal e branco no hover */
+/* Redes sociais: só o símbolo, em botão circular amarelo; branco no hover */
 .socials { gap: 14px; }
 .social {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 11px 22px 11px 14px;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  border-radius: 50%;
   backdrop-filter: blur(4px);
 }
 .social svg {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   flex: none;
   fill: currentColor;
   transition: transform 0.3s ease;

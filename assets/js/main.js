@@ -103,7 +103,7 @@
       ]
         .filter(([, , url]) => url)
         .map(([key, label, url]) =>
-          el("a", { class: "social", href: url, target: "_blank", rel: "noopener", "aria-label": label, title: label }, icon(key), el("span", {}, label)),
+          el("a", { class: "social", href: url, target: "_blank", rel: "noopener", "aria-label": label, title: label }, icon(key)),
         ),
     );
   }
@@ -217,7 +217,7 @@
             el("h3", {}, m.name),
             m.role ? el("p", { class: "muted" }, m.role) : null,
             m.instagram
-              ? el("a", { class: "social", href: instagramUrl(m.instagram), target: "_blank", rel: "noopener", "aria-label": "Instagram do barbeiro", title: "Instagram" }, icon("instagram"), el("span", {}, "Instagram"))
+              ? el("a", { class: "social", href: instagramUrl(m.instagram), target: "_blank", rel: "noopener", "aria-label": "Instagram do barbeiro", title: "Instagram" }, icon("instagram"))
               : null,
           ),
         ),
