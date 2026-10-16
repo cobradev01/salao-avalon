@@ -108,6 +108,7 @@
           el(
             "div",
             { class: "hero-content" },
+            el("p", { class: "eyebrow" }, "Barbearia masculina premium"),
             el(i === 0 ? "h1" : "h2", {}, b.title || "Avalon Barbearia"),
             b.subtitle ? el("p", { class: "hero-sub" }, b.subtitle) : null,
             el(

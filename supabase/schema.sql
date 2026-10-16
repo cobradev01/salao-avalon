@@ -115,9 +115,9 @@ on conflict (key) do nothing;
 insert into public.banners (title, subtitle, image_url, button_label, position)
 select v.title, v.subtitle, v.image_url, v.button_label, v.position
 from (values
-  ('Cortes que definem seu estilo', 'Estilo • Cuidado • Confiança', 'assets/img/banner-01.jpeg', 'Agendar pelo WhatsApp', 1),
-  ('Onde a qualidade fala mais alto', 'Barba modelada, sobrancelha e atendimento premium', 'assets/img/banner-02.jpeg', 'Agendar pelo WhatsApp', 2),
-  ('Atendimento premium do começo ao fim', 'Corte, barba e sobrancelha com hora marcada', 'assets/img/banner-03.jpeg', 'Agendar pelo WhatsApp', 3)
+  ('Precisão em cada detalhe', 'Cortes masculinos com acabamento de alto padrão', 'assets/img/hero-01.jpg', 'Agendar pelo WhatsApp', 1),
+  ('A barba feita como ela merece', 'Navalha, toalha quente e acabamento impecável', 'assets/img/hero-02.jpg', 'Agendar pelo WhatsApp', 2),
+  ('Sua melhor versão começa aqui', 'Estilo • Cuidado • Confiança', 'assets/img/hero-03.jpg', 'Agendar pelo WhatsApp', 3)
 ) as v(title, subtitle, image_url, button_label, position)
 where not exists (select 1 from public.banners);
 

@@ -1,0 +1,217 @@
+/* Acabamento premium: camadas por cima do styles.css */
+
+:root {
+  --gold-grad: linear-gradient(135deg, #fff1a6 0%, #f5c400 45%, #b8860b 100%);
+  --gold-glow: 0 10px 34px rgba(245, 196, 0, 0.28);
+}
+
+/* Títulos com um leve brilho dourado */
+h2 { text-wrap: balance; }
+.eyebrow {
+  background: var(--gold-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Hero: filete dourado abaixo do título e textura de luz */
+.hero-content h1 { text-shadow: 0 6px 30px rgba(0, 0, 0, 0.45); }
+.hero-content h1::after {
+  content: "";
+  display: block;
+  width: 84px;
+  height: 3px;
+  margin-top: 22px;
+  border-radius: 3px;
+  background: var(--gold-grad);
+  box-shadow: var(--gold-glow);
+}
+.hero-sub { font-weight: 300; letter-spacing: 0.02em; }
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 80% 20%, rgba(245, 196, 0, 0.12), transparent 55%);
+  mix-blend-mode: screen;
+}
+
+/* Botões com brilho dourado no estado normal */
+.btn { box-shadow: var(--gold-glow); }
+.btn:hover,
+.btn:focus-visible { box-shadow: 0 14px 40px rgba(255, 255, 255, 0.22); }
+
+/* Faixa de diferenciais logo abaixo do hero */
+.trust {
+  background: #000;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  padding: 0;
+}
+.trust-grid > div {
+  padding: 26px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-left: 1px solid rgba(245, 196, 0, 0.12);
+  transition: background-color 0.3s ease;
+}
+.trust-grid > div:first-child { border-left: 0; }
+.trust-grid > div:hover { background: #fff; }
+.trust-grid > div:hover b,
+.trust-grid > div:hover span { color: #000; }
+.trust-grid b {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--gold);
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+.trust-grid span { color: var(--muted); font-size: 0.92rem; transition: color 0.3s ease; }
+
+/* Seções: fundo com luz dourada discreta e separador fino */
+section { position: relative; }
+section + section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(100% - 32px, var(--max));
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(245, 196, 0, 0.35), transparent);
+}
+.alt {
+  background:
+    radial-gradient(ellipse at 15% 0%, rgba(245, 196, 0, 0.07), transparent 60%),
+    var(--bg-2);
+}
+
+.section-head h2 { font-weight: 900; }
+.section-head::before { box-shadow: var(--gold-glow); }
+
+/* Cards: borda sutil e topo dourado com brilho */
+.card {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0)) ,
+    linear-gradient(180deg, var(--bg-3), var(--bg-2));
+  border-top: 2px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 2px;
+  background: var(--gold-grad);
+  opacity: 0.9;
+}
+.service .price {
+  font-family: Roboto, sans-serif;
+  letter-spacing: 0.02em;
+}
+.service .price::before {
+  content: "A partir de";
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+.service:hover .price::before { color: #000; }
+
+/* Equipe: foto com leve contraste e acabamento */
+.member .photo { position: relative; }
+.member .photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.55), transparent 45%);
+  pointer-events: none;
+}
+.member img { filter: contrast(1.05) saturate(0.95); }
+
+/* Sobre: moldura com detalhe dourado */
+.frame {
+  position: relative;
+  border-radius: 18px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), var(--gold-glow);
+}
+.split > div:first-child { position: relative; }
+.split > div:first-child::before {
+  content: "";
+  position: absolute;
+  inset: -14px 14px 14px -14px;
+  border: 1px solid rgba(245, 196, 0, 0.35);
+  border-radius: 18px;
+  z-index: -1;
+  transition: transform 0.5s ease, border-color 0.5s ease;
+}
+.split > div:first-child:hover::before {
+  transform: translate(-6px, 6px);
+  border-color: #fff;
+}
+.features li {
+  background: rgba(245, 196, 0, 0.04);
+}
+
+/* Contato */
+.info-row span { font-size: 1.05rem; color: var(--text); }
+.socials .social { backdrop-filter: blur(4px); }
+
+/* Rodapé */
+.footer {
+  background: #000;
+  padding: 44px 0;
+  letter-spacing: 0.04em;
+}
+.footer::before {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 2px;
+  margin: 0 auto 18px;
+  background: var(--gold-grad);
+}
+
+/* WhatsApp flutuante com halo */
+.wa-float { box-shadow: 0 14px 34px rgba(245, 196, 0, 0.45); }
+.wa-float::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1px solid rgba(245, 196, 0, 0.5);
+  animation: halo 2.4s ease-out infinite;
+}
+@keyframes halo {
+  from { transform: scale(0.9); opacity: 0.9; }
+  to { transform: scale(1.35); opacity: 0; }
+}
+
+@media (max-width: 900px) {
+  .trust-grid { grid-template-columns: repeat(2, 1fr); }
+  .trust-grid > div:nth-child(3) { border-left: 0; }
+  .trust-grid > div:nth-child(n+3) { border-top: 1px solid rgba(245, 196, 0, 0.12); }
+}
+
+@media (max-width: 560px) {
+  .trust-grid { grid-template-columns: 1fr 1fr; }
+  .trust-grid > div { padding: 20px 14px; }
+  .trust-grid span { font-size: 0.85rem; }
+  .hero-content h1::after { width: 64px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wa-float::after { animation: none; }
+}
