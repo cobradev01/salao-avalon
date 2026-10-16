@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Painel Avalon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <section id="config-erro" class="box-page hidden">
+    <div class="box">
+      <h1>Falta configurar o Supabase</h1>
+      <p class="muted">Abra <code>assets/js/config.js</code> e preencha a URL e a chave anon do seu projeto.</p>
+    </div>
+  </section>
+
+  <section id="login" class="login hidden">
+    <form id="login-form" class="box">
+      <img class="logo" src="../assets/img/logo-avalon.jpeg" alt="Avalon Barbearia">
+      <h1>Painel Avalon</h1>
+      <label>E-mail
+        <input type="email" name="email" required autocomplete="username">
+      </label>
+      <label>Senha
+        <input type="password" name="password" required autocomplete="current-password">
+      </label>
+      <button class="btn" type="submit">Entrar</button>
+      <p id="login-erro" class="erro" role="alert"></p>
+    </form>
+  </section>
+
+  <section id="panel" class="hidden">
+    <header class="topbar">
+      <strong>Avalon · Painel</strong>
+      <button id="logout" class="btn btn-outline btn-sm" type="button">Sair</button>
+    </header>
+    <nav class="tabs" id="tabs"></nav>
+    <main id="content" class="content"></main>
+  </section>
+
+  <dialog id="modal">
+    <form id="modal-form" class="form"></form>
+  </dialog>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+  <script src="../assets/js/config.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
