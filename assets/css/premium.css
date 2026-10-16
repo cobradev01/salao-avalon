@@ -285,6 +285,10 @@ section + section::before {
 }
 .credit a:hover,
 .credit a:focus-visible { color: #fff; }
+.admin-link { width: 100%; text-align: center; margin: 0; }
+.admin-link a { color: var(--muted); text-decoration: none; font-size: 0.78rem; transition: color 0.25s ease; }
+.admin-link a:hover,
+.admin-link a:focus-visible { color: #fff; }
 @media (max-width: 900px) {
   .footer-grid { grid-template-columns: 1fr 1fr; }
 }
