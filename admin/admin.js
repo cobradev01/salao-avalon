@@ -69,6 +69,7 @@
       { key: "image_url", label: "Foto (use fotos na vertical ou horizontal, de boa qualidade)", type: "image", required: true },
       { key: "caption", label: "Legenda (opcional)" },
       { key: "position", label: "Ordem", type: "number" },
+      { key: "featured", label: "Destacar (aparece maior no site)", type: "bool" },
       { key: "active", label: "Visível no site", type: "bool" },
     ],
   };
@@ -89,6 +90,7 @@
     { key: "youtube", label: "YouTube (link)" },
     { key: "threads", label: "Threads (link)" },
     { key: "x", label: "X (link)" },
+    { key: "hashtags", label: "Hashtags para compartilhar (ex.: #avalonbarbearia #barbeariagoiania)", type: "textarea" },
   ];
 
   // Caminhos do site (assets/...) são relativos à raiz; o painel fica em /admin/, então sobe um nível
